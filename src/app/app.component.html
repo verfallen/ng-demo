@@ -25,4 +25,7 @@
   <p>{{ currentRace.name }}</p>
   <input [(ngModel)]="currentRace.name" />
 </div>
+
+<!-- 管道：只要用于格式化数据 -->
+<p>{{ currentTime | date: "yyyy/MM/dd HH:mm:ss" }}</p>
 <router-outlet></router-outlet>

@@ -34,4 +34,5 @@ export class AppComponent {
   }
 
   public currentRace: object = { name: "ngModel 属性" };
+  public currentTime: Date = new Date();
 }
