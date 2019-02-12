@@ -1,4 +1,5 @@
-import { Component, NgModule } from "@angular/core";
+import { Component, NgModule, ViewChild } from "@angular/core";
+import { ParentComponent } from "../parent-and-chid/parent.component";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -35,4 +36,7 @@ export class AppComponent {
 
   public currentRace: object = { name: "ngModel 属性" };
   public currentTime: Date = new Date();
+
+  @ViewChild(ParentComponent)
+  private parentComponent: ParentComponent;
 }
