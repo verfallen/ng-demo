@@ -11,4 +11,8 @@ export class ParentComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  doSomething(): void {
+    console.log("收到了子组件的自定义事件");
+  }
 }
