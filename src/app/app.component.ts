@@ -1,9 +1,12 @@
 import { Component, NgModule, ViewChild } from "@angular/core";
 import { ParentComponent } from "../parent-and-chid/parent.component";
+import { flyIn } from "../animation/fly-in";
+
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.styl"]
+  styleUrls: ["./app.component.styl"],
+  animations: [flyIn]
 })
 export class AppComponent {
   public isShow: boolean = true;

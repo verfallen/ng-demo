@@ -2,7 +2,7 @@
 <!-- 结构型指令 -->
 <div style="text-align:center">
   <p *ngIf="isShow">是否显示</p>
-  <button class="btn" (click)="toggleShow()">显示/y隐藏</button>
+  <button class="btn btn-info" (click)="toggleShow()">显示/y隐藏</button>
 </div>
 <ul>
   <li *ngFor="let item of list; let i = index">{{ i + 1 }}-{{ item }}</li>
@@ -35,4 +35,11 @@
 <!-- 使用Service通信 -->
 <child-1></child-1>
 <child-2></child-2>
+
+<div class="container">
+  <div class="panel panel-primary" [@flyIn]="void">
+    <div class="panel-heading">动画效果</div>
+    <div class="panel-body">一连串文字</div>
+  </div>
+</div>
 <router-outlet></router-outlet>
