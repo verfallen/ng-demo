@@ -14,6 +14,7 @@ import { EventBusService } from "../brothers/service/event-bus.service";
 import { DynamicComponent } from "./src/dynamic-component/dynamic/dynamic.component";
 import { Child11Component } from "./src/dynamic-component/child11/child11/child11.component";
 import { DelayDirective } from "./src/direative/delay.directive";
+import { HighlightComponent } from './src/highlight/highlight.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { DelayDirective } from "./src/direative/delay.directive";
     Child2Component,
     DynamicComponent,
     Child11Component,
-    DelayDirective
+    DelayDirective,
+    HighlightComponent
   ],
   imports: [
     BrowserModule,
