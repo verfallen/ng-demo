@@ -1,54 +1,78 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<!-- 结构型指令 -->
-<div style="text-align:center">
-  <p *ngIf="isShow">是否显示</p>
-  <button class="btn btn-info" (click)="toggleShow()">显示/y隐藏</button>
-</div>
-<ul>
-  <li *ngFor="let item of list; let i = index">{{ i + 1 }}-{{ item }}</li>
-</ul>
-<div [ngSwitch]="mapStatus">
-  <div *ngSwitchCase="0">这是0</div>
-  <div *ngSwitchDefault>默认</div>
-</div>
 
-<!-- 属性型指令 -->
-<div [ngClass]="currentClasses">设置样式</div>
-<button class="btn" (click)="setCurrentClasses()">设置</button>
+<div class="row">
+  <!-- 结构型指令 -->
+  <div style="text-align:center" class="border col-md-4">
+    <p *ngIf="isShow">是否显示</p>
+    <button class="btn btn-info" (click)="toggleShow()">显示/y隐藏</button>
+  </div>
+  <div class="border col-md-4">
+    <ul>
+      <li *ngFor="let item of list; let i = index">{{ i + 1 }}-{{ item }}</li>
+    </ul>
+  </div>
 
-<div [ngStyle]="currentStyle">
-  设置内联样式
-</div>
-<button class="btn" (click)="setCurrentStyle()">设置</button>
+  <div [ngSwitch]="mapStatus" class="border col-md-4">
+    <div *ngSwitchCase="0">这是0</div>
+    <div *ngSwitchDefault>默认</div>
+  </div>
 
-<div>
-  <p>{{ currentRace.name }}</p>
-  <input [(ngModel)]="currentRace.name" />
-</div>
+  <!-- 属性型指令 -->
+  <div class="col-md-4 border">
+    <div [ngClass]="currentClasses">设置样式</div>
+    <button class="btn btn-info" (click)="setCurrentClasses()">设置</button>
+  </div>
 
-<!-- 管道：只要用于格式化数据 -->
-<p>{{ currentTime | date: "yyyy/MM/dd HH:mm:ss" }}</p>
+  <div class="col-md-4 border">
+    <div [ngStyle]="currentStyle">
+      设置内联样式
+    </div>
+    <button class="btn btn-primary" (click)="setCurrentStyle()">设置</button>
+  </div>
 
-<!-- 组件间通信 -->
-<parent></parent>
+  <!-- 双向绑定ngModel -->
+  <div class="col-md-4 border">
+    <p>{{ currentRace.name }}</p>
+    <input [(ngModel)]="currentRace.name" />
+  </div>
 
-<!-- 使用Service通信 -->
-<child-1></child-1>
-<child-2></child-2>
+  <!-- 管道：只要用于格式化数据 -->
+  <div class="col-md-4 border">
+    <p>{{ currentTime | date: "yyyy/MM/dd HH:mm:ss" }}</p>
+  </div>
 
-<div class="container">
-  <div class="panel panel-primary" [@flyIn]="void">
-    <div class="panel-heading">动画效果</div>
-    <div class="panel-body">一连串文字</div>
+  <!-- 组件间通信 -->
+  <div class="col-md-4 border">
+    <parent></parent>
+  </div>
+
+  <!-- 使用Service通信 -->
+  <div class="col-md-4 border">
+    <child-1></child-1>
+    <child-2></child-2>
+  </div>
+
+  <!-- 动画效果 -->
+  <div class="col-md-4 border">
+    <div class="panel panel-primary" [@flyIn]="void">
+      <div class="panel-heading">动画效果</div>
+      <div class="panel-body">一连串文字</div>
+    </div>
+  </div>
+
+  <!-- 动态组件 -->
+  <div class="col-md-4 border">
+    <dynamic></dynamic>
+  </div>
+
+  <!-- 自定义指令 -->
+  <div class="col-md-4 border">
+    <div *ngFor="let item of [1, 2, 3, 4]">
+      <button class="btn btn-info" *appDelay="500 * item">
+        第{{ item }}个按钮
+      </button>
+    </div>
   </div>
 </div>
 
-<dynamic></dynamic>
-
-<!-- 自定义指令 -->
-<div *ngFor="let item of [1, 2, 3, 4]">
-  <button class="btn btn-info" *appDelay="500 * item">
-    第{{ item }}个按钮
-  </button>
-</div>
 <router-outlet></router-outlet>
