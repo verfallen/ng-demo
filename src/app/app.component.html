@@ -44,4 +44,11 @@
 </div>
 
 <dynamic></dynamic>
+
+<!-- 自定义指令 -->
+<div *ngFor="let item of [1, 2, 3, 4]">
+  <button class="btn btn-info" *appDelay="500 * item">
+    第{{ item }}个按钮
+  </button>
+</div>
 <router-outlet></router-outlet>
