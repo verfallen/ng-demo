@@ -11,13 +11,17 @@ import { ChildComponent } from "../parent-and-chid/child/child.component";
 import { Child1Component } from "../brothers/child-1/child-1.component";
 import { Child2Component } from "../brothers/child-2/child-2.component";
 import { EventBusService } from "../brothers/service/event-bus.service";
+import { DynamicComponent } from "./src/dynamic-component/dynamic/dynamic.component";
+import { Child11Component } from "./src/dynamic-component/child11/child11/child11.component";
 @NgModule({
   declarations: [
     AppComponent,
     ParentComponent,
     ChildComponent,
     Child1Component,
-    Child2Component
+    Child2Component,
+    DynamicComponent,
+    Child11Component
   ],
   imports: [
     BrowserModule,
@@ -26,6 +30,7 @@ import { EventBusService } from "../brothers/service/event-bus.service";
     BrowserAnimationsModule
   ],
   providers: [EventBusService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [Child11Component]
 })
 export class AppModule {}
