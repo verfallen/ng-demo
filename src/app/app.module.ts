@@ -14,7 +14,11 @@ import { EventBusService } from "../brothers/service/event-bus.service";
 import { DynamicComponent } from "./src/dynamic-component/dynamic/dynamic.component";
 import { Child11Component } from "./src/dynamic-component/child11/child11/child11.component";
 import { DelayDirective } from "./src/direative/delay.directive";
-import { HighlightComponent } from './src/highlight/highlight.component';
+import { HighlightComponent } from "./src/highlight/highlight.component";
+import { HomeComponent } from "./src/home/home.component";
+import { JokesComponent } from "./src/jokes/jokes.component";
+import { appRoutes } from "./app.routes";
+import { RouterModule } from "@angular/router";
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +29,16 @@ import { HighlightComponent } from './src/highlight/highlight.component';
     DynamicComponent,
     Child11Component,
     DelayDirective,
-    HighlightComponent
+    HighlightComponent,
+    HomeComponent,
+    JokesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: true })
   ],
   providers: [EventBusService],
   bootstrap: [AppComponent],
