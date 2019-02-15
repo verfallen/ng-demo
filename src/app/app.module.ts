@@ -15,8 +15,6 @@ import { DynamicComponent } from "./src/dynamic-component/dynamic/dynamic.compon
 import { Child11Component } from "./src/dynamic-component/child11/child11/child11.component";
 import { DelayDirective } from "./src/direative/delay.directive";
 import { HighlightComponent } from "./src/highlight/highlight.component";
-import { HomeComponent } from "./src/home/home.component";
-import { JokesComponent } from "./src/jokes/jokes.component";
 import { appRoutes } from "./app.routes";
 import { RouterModule } from "@angular/router";
 @NgModule({
@@ -29,9 +27,7 @@ import { RouterModule } from "@angular/router";
     DynamicComponent,
     Child11Component,
     DelayDirective,
-    HighlightComponent,
-    HomeComponent,
-    JokesComponent
+    HighlightComponent
   ],
   imports: [
     BrowserModule,

@@ -1,18 +1,15 @@
-import { HomeComponent } from "./src/home/home.component";
-import { JokesComponent } from "./src/jokes/jokes.component";
-
 export const appRoutes = [
-  // { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: "", redirectTo: "home", pathMatch: "full" },
   {
     path: "home",
-    component: HomeComponent
+    loadChildren: "./home/home.module#HomeModule"
   },
   {
     path: "jokes",
-    component: JokesComponent
+    loadChildren: "./jokes/jokes.module#JokesModule"
   },
   {
     path: "**",
-    component: HomeComponent
+    loadChildren: "./home/home.module#HomeModule"
   }
 ];
