@@ -27,6 +27,25 @@
       </div>
     </div>
   </div>
+  <div>
+    <input
+      type="text"
+      #mobile="ngModel"
+      name="mobile"
+      [(ngModel)]="regModel.mobile"
+      placeholder="mobile"
+      class="form-control"
+      ChineseMobileValidator
+    />
+    <div
+      *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)"
+      class="text-danger"
+    >
+      <div *ngIf="!mobile.errors.ChineseMobileValidator">
+        请输入合法的手机号
+      </div>
+    </div>
+  </div>
 
   <input
     type="password"

@@ -1,5 +1,6 @@
 export class RegisterModel {
-  userName: string = "用户";
+  userName: string;
   password: string;
-  rememberMe: boolean = false;
+  rememberMe: boolean;
+  mobile: string;
 }

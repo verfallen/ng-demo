@@ -18,6 +18,7 @@ import { HighlightComponent } from "./src/highlight/highlight.component";
 import { appRoutes } from "./app.routes";
 import { RouterModule } from "@angular/router";
 import { FormComponent } from './src/form/form.component';
+import { ChineseMobileValidatorDirective } from './src/form/directives/chinese-mobile-validator.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { FormComponent } from './src/form/form.component';
     Child11Component,
     DelayDirective,
     HighlightComponent,
-    FormComponent
+    FormComponent,
+    ChineseMobileValidatorDirective
   ],
   imports: [
     BrowserModule,
