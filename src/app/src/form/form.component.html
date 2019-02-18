@@ -1,11 +1,33 @@
-<form>
-  <input
-    type="text"
-    class="form-control"
-    placeholder="Email"
-    [(ngModel)]="regModel.userName"
-    name="userName"
-  />
+<form #registerForm="ngForm" class="from-horizontal">
+  <div
+    class="form-group"
+    [ngClass]="{
+      'has-error': userName.invalid && (userName.dirty || userName.touched)
+    }"
+  >
+    <div>
+      <input
+        #userName="ngModel"
+        type="text"
+        class="form-control"
+        placeholder="Email"
+        [(ngModel)]="regModel.userName"
+        name="userName"
+        required
+        minlength="12"
+        maxlength="31"
+      />
+      <div
+        *ngIf="userName.invalid && (userName.dirty || userName.touched)"
+        class="text-danger"
+      >
+        <div *ngIf="userName.errors.required">用户名不能为空</div>
+        <div *ngIf="userName.errors.minlength">最小长度不能小于12个字符</div>
+        <div *ngIf="userName.errors.maxlength">最大长度不能大于32个字符</div>
+      </div>
+    </div>
+  </div>
+
   <input
     type="password"
     name="password"
@@ -19,7 +41,19 @@
     [(ngModel)]="regModel.rememberMe"
   />
 
-  <p>用户名：{{ regModel.userName }}</p>
-  <p>密码：{{ regModel.password }}</p>
-  <p>是否记住：{{ regModel.rememberMe }}</p>
+  <div class="border-top">
+    <p>用户名：{{ regModel.userName }}</p>
+    <p>密码：{{ regModel.password }}</p>
+    <p>是否记住：{{ regModel.rememberMe }}</p>
+
+    <p>
+      表单状态：{{ registerForm.valid }}
+      {{ registerForm.invalid }}
+      {{ registerForm.pending }}
+      {{ registerForm.pristine }}
+      {{ registerForm.dirty }}
+      {{ registerForm.untouched }}
+      {{ registerForm.touched }}
+    </p>
+  </div>
 </form>
