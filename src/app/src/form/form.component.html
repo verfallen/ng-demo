@@ -1,0 +1,25 @@
+<form>
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Email"
+    [(ngModel)]="regModel.userName"
+    name="userName"
+  />
+  <input
+    type="password"
+    name="password"
+    class="form-control"
+    [(ngModel)]="regModel.password"
+    placeholder="password"
+  />
+  记住我：<input
+    type="checkbox"
+    name="rememberMe"
+    [(ngModel)]="regModel.rememberMe"
+  />
+
+  <p>用户名：{{ regModel.userName }}</p>
+  <p>密码：{{ regModel.password }}</p>
+  <p>是否记住：{{ regModel.rememberMe }}</p>
+</form>

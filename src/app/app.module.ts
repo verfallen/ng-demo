@@ -17,6 +17,7 @@ import { DelayDirective } from "./src/direative/delay.directive";
 import { HighlightComponent } from "./src/highlight/highlight.component";
 import { appRoutes } from "./app.routes";
 import { RouterModule } from "@angular/router";
+import { FormComponent } from './src/form/form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { RouterModule } from "@angular/router";
     DynamicComponent,
     Child11Component,
     DelayDirective,
-    HighlightComponent
+    HighlightComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
