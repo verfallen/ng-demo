@@ -77,21 +77,28 @@
   <div class="border col-md-4">
     <app-highlight highlightColor="#faf"></app-highlight>
   </div>
+
+  <div class="border col-md-4">
+    <app-form></app-form>
+  </div>
+
+  <!-- 路由 -->
+  <div class="border col-md-4">
+    <nav class="navbar navbar-expand-lg">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" routerLink="jokes">Jokes</a>
+        </li>
+      </ul>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
-<div class="border col-md-4">
-  <app-form></app-form>
+<!-- Service -->
+<div class="col-md-4 border">
+  <app-user-list></app-user-list>
 </div>
-<!-- 路由 -->
-<nav class="navbar navbar-expand-lg">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a href="#" class="nav-link" routerLink="home">Home</a>
-    </li>
-    <li class="nav-item">
-      <a href="#" class="nav-link" routerLink="jokes">Jokes</a>
-    </li>
-  </ul>
-</nav>
-
-<router-outlet></router-outlet>

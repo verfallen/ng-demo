@@ -17,8 +17,10 @@ import { DelayDirective } from "./src/direative/delay.directive";
 import { HighlightComponent } from "./src/highlight/highlight.component";
 import { appRoutes } from "./app.routes";
 import { RouterModule } from "@angular/router";
-import { FormComponent } from './src/form/form.component';
-import { ChineseMobileValidatorDirective } from './src/form/directives/chinese-mobile-validator.directive';
+import { FormComponent } from "./src/form/form.component";
+import { ChineseMobileValidatorDirective } from "./src/form/directives/chinese-mobile-validator.directive";
+import { UserListComponent } from "./user-list/user-list.component";
+import { UserListService } from "./user-list/service/user-list.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import { ChineseMobileValidatorDirective } from './src/form/directives/chinese-m
     DelayDirective,
     HighlightComponent,
     FormComponent,
-    ChineseMobileValidatorDirective
+    ChineseMobileValidatorDirective,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ import { ChineseMobileValidatorDirective } from './src/form/directives/chinese-m
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true })
   ],
-  providers: [EventBusService],
+  providers: [EventBusService, UserListService],
   bootstrap: [AppComponent],
   entryComponents: [Child11Component]
 })
